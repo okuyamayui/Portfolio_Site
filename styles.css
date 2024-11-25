@@ -1,4 +1,4 @@
-
+/* 全体の基本スタイル */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -7,48 +7,55 @@ body {
   color: #333;
   text-align: center;
 }
+
+/* ヘッダー部分 */
 header {
-  background-color: #fff;
+  background-color: #333;
+  color: white;
   padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #ddd;
+  text-align: center;
 }
+
 header h1 {
   font-size: 24px;
+  margin: 0;
 }
-header .social-icons a {
-  margin: 0 10px;
-}
-header .social-icons img {
-  width: 24px;
-  height: 24px;
-}
+
+/* 大きな画像部分 */
 .featured {
-  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px; /* セクションの高さ */
+  background-color: #eee; /* プレースホルダーの背景色 */
+  border: 2px dashed #ccc; /* プレースホルダーの枠線 */
+  color: #666; /* テキストカラー */
+  font-size: 24px;
+  font-weight: bold;
 }
-.featured img {
-  width: 80%;
-  max-width: 800px;
-  margin: 0 auto;
-  display: block;
-  opacity: 0.5;
-}
-.featured img.coming-soon {
-  opacity: 0.5;
-}
+
+/* ギャラリー部分 */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 10px;
-  margin: 20px;
-  padding: 0;
-  list-style: none;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* 横幅150px以上で均等配置 */
+  gap: 20px; /* 各枠の間隔 */
+  padding: 20px;
 }
-.gallery img {
+
+.gallery div {
   width: 100%;
-  height: auto;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding-top: 100%; /* 正方形の枠を維持 */
+  background-color: #f9f9f9; /* プレースホルダーの背景色 */
+  border: 2px dashed #ccc; /* 枠線 */
+  position: relative;
+}
+
+.gallery div::after {
+  content: "枠線のみ"; /* テキストを中央に表示 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  color: #aaa;
 }
