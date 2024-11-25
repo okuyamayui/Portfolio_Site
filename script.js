@@ -4,22 +4,24 @@ const gallery = document.querySelector(".gallery");
 // 仮のギャラリー枠を生成する数
 const placeholderCount = 8;
 
-// 枠線のみのギャラリーを生成
-for (let i = 0; i < placeholderCount; i++) {
-  const placeholder = document.createElement("div"); // 枠を生成
-  gallery.appendChild(placeholder); // ギャラリーセクションに追加
-}
+// 仮の画像URLリスト（画像がある場合はここに実際のパスを追加）
+const galleryImages = []; // 空のままだと枠のみ表示されます
 
-// 注目画像が設定されているかチェック
-const featuredImageContainer = document.querySelector(".featured");
-const featuredImageAvailable = false; // 画像がある場合はtrueに設定
-
-if (!featuredImageAvailable) {
-  // 画像がない場合、"Coming Soon" が既に表示されているため、特に追加の処理は不要
+// ギャラリーを生成
+if (galleryImages.length > 0) {
+  // 実際の画像がある場合
+  galleryImages.forEach((src) => {
+    const img = document.createElement("img");
+    img.src = src;
+    img.alt = "ギャラリー画像";
+    img.style.width = "100%";
+    img.style.height = "auto";
+    gallery.appendChild(img);
+  });
 } else {
-  // 画像がある場合の処理（将来的に画像を追加する場合用）
-  // const img = document.createElement("img");
-  // img.src = "path-to-your-featured-image.jpg"; // 実際の画像パス
-  // featuredImageContainer.innerHTML = ""; // "Coming Soon" を削除
-  // featuredImageContainer.appendChild(img); // 画像を追加
+  // 画像がない場合は枠線のみを表示
+  for (let i = 0; i < placeholderCount; i++) {
+    const placeholder = document.createElement("div");
+    gallery.appendChild(placeholder);
+  }
 }
