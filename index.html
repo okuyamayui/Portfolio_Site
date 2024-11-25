@@ -7,9 +7,19 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- ヘッダー部分 -->
   <header>
     <h1>奥山結衣のポートフォリオ</h1>
+    <nav>
+      <ul>
+        <li><a href="#">ホーム</a></li>
+        <li><a href="#">ギャラリー</a></li>
+        <li><a href="#">連絡先</a></li>
+      </ul>
+    </nav>
   </header>
+
+  <!-- メイン部分 -->
   <main>
     <!-- 大きな画像部分 -->
     <section class="featured">
@@ -19,10 +29,14 @@
     </section>
 
     <!-- ギャラリー部分 -->
-    <section class="gallery">
-      <!-- ギャラリー枠はJavaScriptで生成 -->
+    <section class="gallery-section">
+      <h2>ギャラリー</h2>
+      <div class="gallery">
+        <!-- JavaScriptで枠や画像を動的に生成 -->
+      </div>
     </section>
   </main>
+
   <script src="script.js"></script>
 </body>
 </html>
