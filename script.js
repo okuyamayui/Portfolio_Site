@@ -1,22 +1,25 @@
-
-const featuredImage = document.querySelector(".featured img");
+// ギャラリーセクションを取得
 const gallery = document.querySelector(".gallery");
 
-// Simulate loading images (Replace these URLs with actual images in your repository)
-const featuredSrc = "";
-const galleryImages = [];
+// 仮のギャラリー枠を生成する数
+const placeholderCount = 8;
 
-// Update the featured image if available
-if (featuredSrc) {
-  featuredImage.src = featuredSrc;
-  featuredImage.classList.remove("coming-soon");
+// 枠線のみのギャラリーを生成
+for (let i = 0; i < placeholderCount; i++) {
+  const placeholder = document.createElement("div"); // 枠を生成
+  gallery.appendChild(placeholder); // ギャラリーセクションに追加
 }
 
-// Update gallery images
-if (galleryImages.length > 0) {
-  galleryImages.forEach(src => {
-    const img = document.createElement("img");
-    img.src = src;
-    gallery.appendChild(img);
-  });
+// 注目画像が設定されているかチェック
+const featuredImageContainer = document.querySelector(".featured");
+const featuredImageAvailable = false; // 画像がある場合はtrueに設定
+
+if (!featuredImageAvailable) {
+  // 画像がない場合、"Coming Soon" が既に表示されているため、特に追加の処理は不要
+} else {
+  // 画像がある場合の処理（将来的に画像を追加する場合用）
+  // const img = document.createElement("img");
+  // img.src = "path-to-your-featured-image.jpg"; // 実際の画像パス
+  // featuredImageContainer.innerHTML = ""; // "Coming Soon" を削除
+  // featuredImageContainer.appendChild(img); // 画像を追加
 }
